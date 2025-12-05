@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Melika</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="heart.ico">
+
+<style>
+    body {
+        margin: 0;
+        background: linear-gradient(135deg, #ffd6e8, #ffeef7, #ffc2dd);
+        font-family: 'Poppins', sans-serif;
+        animation: bgShift 20s ease infinite;
+        overflow-x: hidden;
+    }
+
+    @keyframes bgShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    header {
+        text-align: center;
+        padding: 60px 20px;
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        color: #b1005a;
+        text-shadow: 0 2px 10px rgba(255, 0, 102, 0.3);
+        animation: fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .heart {
+        position: fixed;
+        bottom: -20px;
+        color: #ff5ea7;
+        font-size: 25px;
+        animation: floatUp 6s linear infinite;
+        opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+        100% { transform: translateY(-120vh) translateX(40px); opacity: 0; }
+    }
+
+    .gallery {
+        max-width: 900px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        padding: 20px 20px 80px;
+    }
+
+    .photo-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border-radius: 25px;
+        padding: 25px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        transform: rotate(-1deg);
+        animation: cardFloat 5s ease-in-out infinite;
+    }
+
+    .photo-card:nth-child(even) {
+        transform: rotate(1deg);
+        animation-delay: 1.5s;
+    }
+
+    @keyframes cardFloat {
+        0% { transform: translateY(0) rotate(-1deg); }
+        50% { transform: translateY(-10px) rotate(-1deg); }
+        100% { transform: translateY(0) rotate(-1deg); }
+    }
+
+    img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(255, 0, 0, 0.15);
+    }
+
+    p {
+        font-size: 1.3rem;
+        color: #6b2f4b;
+        margin-top: 15px;
+        text-align: center;
+        line-height: 1.7;
+        font-family: "Playfair Display", serif;
+    }
+
+    .music {
+        display: flex;
+        justify-content: center;
+        margin-top: -20px;
+        margin-bottom: 30px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 40px;
+        font-size: 1.1rem;
+        color: #8a3a64;
+        font-family: "Playfair Display", serif;
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    For kanoom KHOSHGELE 💗
+</header>
+
+<div class="music">
+    <audio controls src="Eyedress-Babygirl-320.mp3"></audio>
+</div>
+
+<script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 8000);
+    }
+
+    setInterval(createHeart, 600);
+</script>
+
+<div class="gallery">
+
+    <div class="photo-card">
+        <img src="meli4.jpg" alt="Pretty girl">
+        <p>
+            There’s something magical in the way you look at the world —  
+            like your eyes carry a warmth that could soften even the hardest day.
+        </p>
+    </div>
+
+    <div class="photo-card">
+        <img src="meli2.jpg" alt="Girl resting her cheek on hand">
+        <p>
+            You’re pretty in a way that doesn’t need announcing.  
+            It’s gentle. Natural. Effortless.  
+            And the way you care?  
+            It stays with people, quietly shaping the world around you.
+        </p>
+    </div>
+
+    <div class="photo-card">
+        <img src="meli3.jpg" alt="Cute dog with flowers">
+        <p>
+            Even the small, soft things around you seem brighter —  
+            as if your presence teaches the world how to glow.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    Made just for you — with love, warmth, and a little bit of magic. 💗
+</footer>
+
+</body>
+</html>
